@@ -1,0 +1,41 @@
+{
+    "name": "vaersaagod/shoot",
+    "description": "Screenshot stuff.",
+    "type": "craft-plugin",
+    "version": "2.1.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "shoot"
+    ],
+    "support": {
+        "docs": "https://github.com/vaersaagod/shoot/blob/master/README.md",
+        "issues": "https://github.com/vaersaagod/shoot/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Værsågod",
+            "homepage": "https://vaersaagod.no"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1",
+        "spatie/browsershot": "^3.12"
+    },
+    "autoload": {
+        "psr-4": {
+          "vaersaagod\\shoot\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Shoot",
+        "handle": "shoot",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/vaersaagod/shoot/master/CHANGELOG.md",
+        "class": "vaersaagod\\shoot\\Shoot"
+    }
+}
