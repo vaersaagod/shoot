@@ -23,7 +23,7 @@ sudo chmod -R o+rx /usr/lib/node_modules/puppeteer/.local-chromium
 "repositories": {
    "vaersaagod/shoot": {
       "type": "git",
-      "url": "git@bitbucket.org:vaersaagod/shoot.git",
+      "url": "git@github.com:vaersaagod/shoot.git",
       "trunk-path": "master"
    }
 }
