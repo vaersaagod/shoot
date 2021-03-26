@@ -2,9 +2,19 @@
 
 ## Installation
 
+### Installing Chromium (Puppeteer) locally (macOS)
+
+Install Chromium following the guide here: https://github.com/spatie/browsershot#requirements  
+
+`npm install puppeteer`  
+
+or globally:  
+
+`npm install puppeteer --global`  
+
 ### Installing Chromium (Puppeteer) on the server (Ubuntu)
 
-Install Chromium following the guide here: https://github.com/spatie/browsershot#requirements
+Install Chromium following the guide here: https://github.com/spatie/browsershot#requirements  
 
 ```
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -39,6 +49,7 @@ sudo chmod -R o+rx /usr/lib/node_modules/puppeteer/.local-chromium
 ```
 SHOOT_SYSTEM_PATH="@webroot/shoot"
 SHOOT_CHROMIUM_PATH=
+SHOOT_NODE_MODULES_PATH=
 SHOOT_PUBLIC_ROOT="@webroot"
 SHOOT_BASE_URL="/shoot"
 ```
@@ -53,6 +64,7 @@ use craft\helpers\App;
 return [
     'systemPath' => App::env('SHOOT_SYSTEM_PATH'),
     'chromiumPath' => App::env('SHOOT_CHROMIUM_PATH') ?: null,
+    'nodeModulePath' => App::env('SHOOT_NODE_MODULES_PATH') ?: null,
     'publicRoot' => App::env('SHOOT_PUBLIC_ROOT'),
     'baseUrl' => App::env('SHOOT_BASE_URL'),
     'defaultExtension' => 'png',

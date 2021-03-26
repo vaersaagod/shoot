@@ -419,21 +419,20 @@ class ShootService extends Component
     protected function applyOpts(Browsershot $shot, array $opts = []): Browsershot
     {
 
-        // Set node_modules path
-        $nodeModulesPath = $this->fixSlashes(Craft::$app->getVendorPath() . '/vaersaagod/shoot/node_modules');
-        if (!\file_exists($nodeModulesPath) || !\is_dir($nodeModulesPath)) {
-            throw new \Exception("node_modules folder not found – please run Yarn to install dependencies");
-        }
-        $shot->setNodeModulePath($nodeModulesPath);
-
-        // Custom Chromium path?
         /** @var Settings $settings */
         $settings = Shoot::$plugin->getSettings();
+
+        // Custom node_modules path?
+        if ($settings->nodeModulePath) {
+            $shot->setNodeModulePath($settings->nodeModulePath);
+        }
+
+        // Custom Chromium path?
         if ($settings->chromiumPath) {
             $shot->setChromePath($settings->chromiumPath);
         }
 
-            // Viewport size
+        // Viewport size
         $viewportWidth = $opts['viewport'][0] ?? 800;
         $viewportHeight = $opts['viewport'][1] ?? 600;
         $shot->windowSize($viewportWidth, $viewportHeight);

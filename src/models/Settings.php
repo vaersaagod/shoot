@@ -35,6 +35,11 @@ class Settings extends Model
     /**
      * @var string|null
      */
+    public $nodeModulePath;
+
+    /**
+     * @var string|null
+     */
     public $baseUrl;
 
     /**
