@@ -61,7 +61,7 @@ class ShootModel extends Model
         if ($imagePath != 'null') {
 
             $this->path = $imagePath;
-            $this->extension = FileHelper::getExtensionsByMimeType(FileHelper::getMimeType($imagePath));
+            $this->extension = FileHelper::getExtensionByMimeType(FileHelper::getMimeType($imagePath));
             $this->mimeType = FileHelper::getMimeType($imagePath);
             $this->size = Image::imageSize($imagePath);
 
